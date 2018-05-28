@@ -1,0 +1,16 @@
+<%# @users.each do |user| %>
+  <%#= user.email%>
+<%# end %>
+<center>
+  Create record using has and belongs to many
+  <%= form_tag(:controller => "homes", :action => "create") do %>  
+    <%= select_tag 'user_id', options_for_select(User.all.collect{ |u| [u.name, u.id] }) %>
+    <%= select_tag 'project_id', options_for_select(Project.all.collect{ |u| [u.name, u.id] }) %>
+    <br><br>
+    <%= submit_tag "save" %>    
+  <% end %>  
+</center>
+
+
+
+

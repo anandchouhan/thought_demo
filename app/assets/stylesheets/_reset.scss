@@ -1,0 +1,13 @@
+$set: center;
+ 
+.links {
+  .new-link {
+    text-align: $set;
+  }
+}
+
+$primaryColor: red;
+
+.save-button {
+    color: $primaryColor;
+}

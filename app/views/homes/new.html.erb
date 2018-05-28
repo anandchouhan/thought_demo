@@ -1,0 +1,11 @@
+<div id=users-list></div>
+hello from homes new page
+<script type="text/javascript">
+  $('.users').click(function (argument) {
+    $.ajax({
+      type: "GET",
+      url: "/homes/search"
+    })
+  });
+  
+</script>

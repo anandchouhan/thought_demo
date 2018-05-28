@@ -1,0 +1,11 @@
+<%= form_for @post do |f| %>
+  Post box
+  <%= f.text_area :body %><br><br>
+  <%= f.fields_for :comment do |cmnt| %>
+    Comment Box
+    <%= cmnt.text_area :comnt_body %>
+  <% end %>
+  <%= f.submit "save" %>
+<% end %>
+
+ 
