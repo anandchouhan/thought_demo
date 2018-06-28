@@ -1,0 +1,23 @@
+<%= form_tag(search_homes_path, :method => 'get') do %>
+  <p>
+    <%= text_field_tag :post, params[:post] %>
+    <%= submit_tag "Go" %>
+  </p>
+<% end %>
+
+<% unless @all.blank? %>
+  <% @all.each do |post| %>
+    <%= post.body %><br>
+  <% end %>
+<% end %>
+
+
+<script type="text/javascript">
+  function other_page_fun() {
+    return "from other page"
+  }
+ 
+  $(document).ready(function() {
+      // ...
+  });
+</script>

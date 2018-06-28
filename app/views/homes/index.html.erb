@@ -7,10 +7,21 @@
     <%= select_tag 'user_id', options_for_select(User.all.collect{ |u| [u.name, u.id] }) %>
     <%= select_tag 'project_id', options_for_select(Project.all.collect{ |u| [u.name, u.id] }) %>
     <br><br>
-    <%= submit_tag "save" %>    
+    <%= submit_tag "save", id: "submit-button" %>    
   <% end %>  
 </center>
 
 
 
 
+<script type="text/javascript">
+  $("#submit-button").on('click', function () {
+    alert(other_page_fun())
+  });
+
+
+  function same_page_fun(a) {
+    return "from same page"
+  }
+
+</script>

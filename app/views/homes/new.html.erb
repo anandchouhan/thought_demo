@@ -1,11 +1,3 @@
-<div id=users-list></div>
-hello from homes new page
-<script type="text/javascript">
-  $('.users').click(function (argument) {
-    $.ajax({
-      type: "GET",
-      url: "/homes/search"
-    })
-  });
-  
-</script>
+<h1><%= flash[:notice] %></h1>
+<b><%= t('new.new_page') %></b>
+<b><%#= t('ru.welcome') %></b>

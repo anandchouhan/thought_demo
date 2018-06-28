@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
+  add_breadcrumb "home", :root_path, :options => { :title => "Home" }
 
   def new
     @post = Post.new
     2.times { @post.comments.build }
+    add_breadcrumb "index", posts_path
+    add_breadcrumb "new", new_post_path
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
-      logger.info "user post is #{@post.body}...."  
       redirect_to root_path
     end 
   end
@@ -27,16 +29,17 @@ class PostsController < ApplicationController
   end
 
 
-  def index
-    @q = Post.ransack(params[:q])
-    @posts = @q.result
-    #@q.result.includes(:comments)
-  end
+  # def index
+  #   @q = Post.ransack(params[:q])
+  #   @posts = @q.result
+  #   #@q.result.includes(:comments)
+  #   add_breadcrumb "index", posts_path
+  # end
 
-  def search
-    index
-    render :index
-  end
+  # def search
+  #   index
+  #   render :index
+  # end
 
   private
   def post_params

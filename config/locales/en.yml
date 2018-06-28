@@ -22,3 +22,5 @@
 en:
   hello: "Hello World"
   hello_flash: Hello flash!
+  new: 
+    new_page: "Welcome Here"

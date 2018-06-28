@@ -1,4 +1,5 @@
 class HomesController < ApplicationController
+  add_breadcrumb "home", :root_path, :options => { :title => "Home" }
 
   def index
     @users = User.all
@@ -9,9 +10,10 @@ class HomesController < ApplicationController
   end
 
   def search
-    respond_to do |format|
-      # format.html {}
-      format.js   {}
+    if params[:post].nil?
+      @all = []
+    else
+      @all = Post.search params[:post]
     end
   end
 
