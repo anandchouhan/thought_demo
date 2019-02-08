@@ -9,4 +9,8 @@ class Post < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
+  def method 
+
+  end
+
 end
